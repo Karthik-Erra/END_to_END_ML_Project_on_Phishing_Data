@@ -1,0 +1,14 @@
+[2026-03-11 18:43:37,731] 17 root - INFO - Data Ingestion is inititated
+[2026-03-11 18:43:42,759] 72 root - INFO - Performed train test split on the DataFrame
+[2026-03-11 18:43:42,759] 73 root - INFO - Excited split_data_as_train_test method of Data_Ingestion class
+[2026-03-11 18:43:42,759] 75 root - INFO - Exposrting train file path
+[2026-03-11 18:43:42,825] 82 root - INFO - Exporting test file path
+[2026-03-11 18:43:42,842] 21 root - INFO - Data Ingestion Completed
+[2026-03-11 18:43:42,843] 23 root - INFO - Data Validation is initiated
+[2026-03-11 18:43:42,861] 13 root - INFO - Reading the yaml file
+[2026-03-11 18:43:42,963] 36 root - INFO - required number of columns: 31
+[2026-03-11 18:43:42,963] 37 root - INFO - Data frame has columns: 31
+[2026-03-11 18:43:42,964] 36 root - INFO - required number of columns: 31
+[2026-03-11 18:43:42,964] 37 root - INFO - Data frame has columns: 31
+[2026-03-11 18:43:42,965] 50 root - INFO - Expected numerical columns: ['having_IP_Address', 'URL_Length', 'Shortining_Service', 'having_At_Symbol', 'double_slash_redirecting', 'Prefix_Suffix', 'having_Sub_Domain', 'SSLfinal_State', 'Domain_registeration_length', 'Favicon', 'port', 'HTTPS_token', 'Request_URL', 'URL_of_Anchor', 'Links_in_tags', 'SFH', 'Submitting_to_email', 'Abnormal_URL', 'Redirect', 'on_mouseover', 'RightClick', 'popUpWidnow', 'Iframe', 'age_of_domain', 'DNSRecord', 'web_traffic', 'Page_Rank', 'Google_Index', 'Links_pointing_to_page', 'Statistical_report', 'Result']
+[2026-03-11 18:43:42,965] 50 root - INFO - Expected numerical columns: ['having_IP_Address', 'URL_Length', 'Shortining_Service', 'having_At_Symbol', 'double_slash_redirecting', 'Prefix_Suffix', 'having_Sub_Domain', 'SSLfinal_State', 'Domain_registeration_length', 'Favicon', 'port', 'HTTPS_token', 'Request_URL', 'URL_of_Anchor', 'Links_in_tags', 'SFH', 'Submitting_to_email', 'Abnormal_URL', 'Redirect', 'on_mouseover', 'RightClick', 'popUpWidnow', 'Iframe', 'age_of_domain', 'DNSRecord', 'web_traffic', 'Page_Rank', 'Google_Index', 'Links_pointing_to_page', 'Statistical_report', 'Result']
