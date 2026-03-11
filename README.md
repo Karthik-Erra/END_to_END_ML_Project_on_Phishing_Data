@@ -1,0 +1,1 @@
+- **Constant -> training pipeline -> __init__.py is designed for data ingestion configuration and Training Pipeline Configuartion**
