@@ -82,7 +82,7 @@ jobs:
       - name: Run DOCKER Image to serve users
         run: |
           docker rm -f networksecurity || true
-          docker run -d -p 8000:8000 --ipc="host" --name=networksecurity -e 'AWS_ACCESS_KEY_ID=${{secrets.AWS_ACCESS_KEY_ID}}' -e 'AWS_SECRET_ACCESS_KEY=${{secrets.AWS_SECRET_ACCESS_KEY}}' -e 'AWS_REGION=${{secrets.AWS_REGION}}' ${{secrets.AWS_ECR_LOGIN_URI}}/${{secrets.ECR_REPOSITORY_NAME}}:latest
+          docker run -d -p 8000:8000 --ipc="host" --name=networksecurity -e 'AWS_ACCESS_KEY_ID=${{secrets.AWS_ACCESS_KEY_ID}}' -e 'AWS_SECRET_ACCESS_KEY=${{secrets.AWS_SECRET_ACCESS_KEY}}' -e 'AWS_REGION=${{secrets.AWS_REGION}}' -e 'mongodb_connecting_url=${{secrets.MONGODB_URL}}' -e 'repo_owner=${{secrets.repo_owner}} -e 'repo_name=${{secrets.repo_name}}' ${{secrets.AWS_ECR_LOGIN_URI}}/${{secrets.ECR_REPOSITORY_NAME}}:latest
       - name: Clean previous images and containers
         run: |
           docker image prune -f
