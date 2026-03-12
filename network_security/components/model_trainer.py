@@ -1,6 +1,7 @@
 import os
 import sys
 import mlflow
+from dotenv import load_dotenv
 
 from network_security.logging.logger import logging
 from network_security.exception.exception import CustomeException
@@ -19,6 +20,10 @@ from sklearn.ensemble import (AdaBoostClassifier,
                               GradientBoostingClassifier,
                               RandomForestClassifier)
 
+load_dotenv()
+import dagshub
+dagshub.init(repo_owner=os.environ["repo_owner"], repo_name=os.environ["repo_name"], mlflow=True)
+
 
 class ModelTrainer:
     def __init__(self,model_trainer_config:ModelTrainerConfig,
@@ -31,6 +36,7 @@ class ModelTrainer:
         
     
     def trak_mlflow(self,best_model,classificationmetric:ClassificationMetricArtifact):
+        mlflow.set_experiment("NetworkSecurity")
         with mlflow.start_run():
             model_f1_score = classificationmetric.f1_score
             model_recall_score = classificationmetric.recall_score
@@ -40,9 +46,9 @@ class ModelTrainer:
             mlflow.log_metric("precision_score",model_precision_score)
             mlflow.log_metric("recall_score",model_recall_score)
 
-            mlflow.sklearn.log_model(best_model,"model")
+            mlflow.sklearn.log_model(best_model,name="model")
 
-            logging.info("Finishe MLFlow tracking")
+            logging.info("Finished MLFlow tracking")
 
         
     def train_model(self,x_train,y_train,x_test,y_test):
@@ -113,7 +119,10 @@ class ModelTrainer:
 
             Network_Model = NetworkModel(preprocessor,model=best_model)
 
+            ## Save the model
             save_object(self.model_trainer_config.trained_model_file_path,obj=Network_Model)
+            ## save the model in common folder where preprocessor object also stored
+            save_object(file_path="final_model/model.pkl",obj=best_model)
 
             ##Model Trainer Artifact
             model_trainer_artifact = ModelTrainerArtifact(trained_model_file_path=self.model_trainer_config.trained_model_file_path,

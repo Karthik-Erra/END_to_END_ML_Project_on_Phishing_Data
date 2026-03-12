@@ -1,0 +1,43 @@
+[2026-03-12 17:58:26,176] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2026-03-12 17:58:26,184] 107 dagshub - INFO - Accessing as karthikerra67
+[2026-03-12 17:58:27,410] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/karthikerra67/END_to_END_ML_Project_on_Phishing_Data "HTTP/1.1 200 OK"
+[2026-03-12 17:58:28,535] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2026-03-12 17:58:28,541] 107 dagshub - INFO - Initialized MLflow to track repo "karthikerra67/END_to_END_ML_Project_on_Phishing_Data"
+[2026-03-12 17:58:28,543] 107 dagshub - INFO - Repository karthikerra67/END_to_END_ML_Project_on_Phishing_Data initialized!
+[2026-03-12 17:58:44,727] 114 root - INFO - RUNNING THE RUN PIPE LINE FUCNTION
+[2026-03-12 17:58:44,728] 42 root - INFO - Start data Ingestion
+[2026-03-12 17:58:48,225] 72 root - INFO - Performed train test split on the DataFrame
+[2026-03-12 17:58:48,225] 73 root - INFO - Excited split_data_as_train_test method of Data_Ingestion class
+[2026-03-12 17:58:48,225] 75 root - INFO - Exposrting train file path
+[2026-03-12 17:58:48,280] 82 root - INFO - Exporting test file path
+[2026-03-12 17:58:48,307] 45 root - INFO - Data Ingestion completed and artifact: DataIngestionArtifact(train_file_path='Artifacts\\03_12_2026_17_58_21\\data_ingestion\\ingested\\train.csv', test_file_path='Artifacts\\03_12_2026_17_58_21\\data_ingestion\\ingested\\test.csv')
+[2026-03-12 17:58:48,308] 17 root - INFO - Reading the yaml file
+[2026-03-12 17:58:48,330] 55 root - INFO - Initiate the data Validation
+[2026-03-12 17:58:48,408] 36 root - INFO - required number of columns: 31
+[2026-03-12 17:58:48,408] 37 root - INFO - Data frame has columns: 31
+[2026-03-12 17:58:48,408] 36 root - INFO - required number of columns: 31
+[2026-03-12 17:58:48,408] 37 root - INFO - Data frame has columns: 31
+[2026-03-12 17:58:48,409] 50 root - INFO - Expected numerical columns: ['having_IP_Address', 'URL_Length', 'Shortining_Service', 'having_At_Symbol', 'double_slash_redirecting', 'Prefix_Suffix', 'having_Sub_Domain', 'SSLfinal_State', 'Domain_registeration_length', 'Favicon', 'port', 'HTTPS_token', 'Request_URL', 'URL_of_Anchor', 'Links_in_tags', 'SFH', 'Submitting_to_email', 'Abnormal_URL', 'Redirect', 'on_mouseover', 'RightClick', 'popUpWidnow', 'Iframe', 'age_of_domain', 'DNSRecord', 'web_traffic', 'Page_Rank', 'Google_Index', 'Links_pointing_to_page', 'Statistical_report', 'Result']
+[2026-03-12 17:58:48,409] 50 root - INFO - Expected numerical columns: ['having_IP_Address', 'URL_Length', 'Shortining_Service', 'having_At_Symbol', 'double_slash_redirecting', 'Prefix_Suffix', 'having_Sub_Domain', 'SSLfinal_State', 'Domain_registeration_length', 'Favicon', 'port', 'HTTPS_token', 'Request_URL', 'URL_of_Anchor', 'Links_in_tags', 'SFH', 'Submitting_to_email', 'Abnormal_URL', 'Redirect', 'on_mouseover', 'RightClick', 'popUpWidnow', 'Iframe', 'age_of_domain', 'DNSRecord', 'web_traffic', 'Page_Rank', 'Google_Index', 'Links_pointing_to_page', 'Statistical_report', 'Result']
+[2026-03-12 17:58:48,534] 30 root - INFO - Wite operation is completed for YAML file: Artifacts\03_12_2026_17_58_21\data_validation\drift_report\report.yaml
+[2026-03-12 17:58:48,641] 66 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[2026-03-12 17:58:48,641] 69 root - INFO - Starting the Data Transformation currently in initiation method
+[2026-03-12 17:58:48,715] 50 root - INFO - Entered get_data_trainsformer_object method of transformer class 
+[2026-03-12 17:58:48,716] 53 root - INFO - Initialize KNN imputer with params {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[2026-03-12 17:58:48,736] 51 root - INFO - Entered the save_object method of utils file
+[2026-03-12 17:58:48,743] 55 root - INFO - Excited the save_object method of mainutils class
+[2026-03-12 17:58:48,743] 51 root - INFO - Entered the save_object method of utils file
+[2026-03-12 17:58:48,751] 55 root - INFO - Excited the save_object method of mainutils class
+[2026-03-12 18:03:51,299] 51 root - INFO - Finished MLFlow tracking
+[2026-03-12 18:04:12,065] 51 root - INFO - Finished MLFlow tracking
+[2026-03-12 18:04:13,083] 51 root - INFO - Entered the save_object method of utils file
+[2026-03-12 18:04:13,099] 55 root - INFO - Excited the save_object method of mainutils class
+[2026-03-12 18:04:13,100] 51 root - INFO - Entered the save_object method of utils file
+[2026-03-12 18:04:13,367] 55 root - INFO - Excited the save_object method of mainutils class
+[2026-03-12 18:04:13,367] 131 root - INFO - Model Trainer Artifact ModelTrainerArtifact(trained_model_file_path='Artifacts\\03_12_2026_17_58_21\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=ClassificationMetricArtifact(f1_score=0.9910128243966475, precision_score=0.9899132539842647, recall_score=0.9921148402749697), test_metric_artifact=ClassificationMetricArtifact(f1_score=0.9746317512274959, precision_score=0.9659367396593674, recall_score=0.9834847233691164))
+[2026-03-12 18:04:13,367] 93 root - INFO - Entered the sync_artifact_dir_to_s3
+[2026-03-12 18:04:13,367] 95 root - INFO - trying to sync the articat directory to s3 bucket
+[2026-03-12 18:04:13,367] 6 root - INFO - Entered the sync_folder_to_s3 function
+[2026-03-12 18:04:29,609] 98 root - INFO - artifact foler synced to the s3 bucket successfully!
+[2026-03-12 18:04:29,609] 6 root - INFO - Entered the sync_folder_to_s3 function
+[2026-03-12 18:04:45,367] 123 root - INFO - RUN PIPELINE FUNCTION EXITED SUCCESSFULLY!

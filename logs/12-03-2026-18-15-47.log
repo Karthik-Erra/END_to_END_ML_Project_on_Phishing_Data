@@ -1,0 +1,6 @@
+[2026-03-12 18:15:53,946] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2026-03-12 18:15:53,961] 107 dagshub - INFO - Accessing as karthikerra67
+[2026-03-12 18:15:55,376] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/karthikerra67/END_to_END_ML_Project_on_Phishing_Data "HTTP/1.1 200 OK"
+[2026-03-12 18:15:56,774] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2026-03-12 18:15:56,774] 107 dagshub - INFO - Initialized MLflow to track repo "karthikerra67/END_to_END_ML_Project_on_Phishing_Data"
+[2026-03-12 18:15:56,774] 107 dagshub - INFO - Repository karthikerra67/END_to_END_ML_Project_on_Phishing_Data initialized!
