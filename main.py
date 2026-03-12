@@ -1,11 +1,12 @@
 from network_security.components.data_ingestion import DataIngestion
 from network_security.components.data_validation import DataValidation
 from network_security.components.data_transformation import DataTransformation
+from network_security.components.model_trainer import ModelTrainer
 from network_security.exception.exception import CustomeException
 from network_security.logging.logger import logging
 from network_security.entity.config_entity import (TrainingPipelineConfig,
                                                     DataIngestionConfig, DataValidationConfig, 
-                                                    DataTransformationConfig)
+                                                    DataTransformationConfig, ModelTrainerConfig)
 import sys
 
 if __name__ == "__main__":
@@ -15,6 +16,7 @@ if __name__ == "__main__":
         data_ingestion_config_obj = DataIngestionConfig(training_pipeline_config=training_pipeline_config_obj)
         data_validation_config_obj = DataValidationConfig(training_pipeline_config=training_pipeline_config_obj)
         data_transformation_config_obj = DataTransformationConfig(training_pipeline_config=training_pipeline_config_obj)
+        model_trainer_config_obj = ModelTrainerConfig(training_pipeline_config=training_pipeline_config_obj)
 
         ## Initiate Data Ingestion
         logging.info("Data Ingestion is inititated")
@@ -41,6 +43,14 @@ if __name__ == "__main__":
         data_transformation_artifact = data_transformation_obj.initiate_data_transformation()
 
         logging.info("Data Transformation is completed")
+
+        ## Model Training
+        logging.info("Model Training is Inittiated in main.py")
+
+        model_trainer_obj = ModelTrainer(model_trainer_config=model_trainer_config_obj,data_transformation_artifact=data_transformation_artifact)
+        model_trainer_artifact = model_trainer_obj.initiate_model_trainer()
+
+        logging.info("model training is completed in main.py")
 
     except Exception as e:
         raise CustomeException(e,sys)
