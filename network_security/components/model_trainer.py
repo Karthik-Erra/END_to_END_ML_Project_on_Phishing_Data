@@ -22,6 +22,9 @@ from sklearn.ensemble import (AdaBoostClassifier,
 
 load_dotenv()
 import dagshub
+
+dagshub.auth.add_app_token(os.environ["DAGSHUB_TOKEN"])
+
 dagshub.init(repo_owner=os.environ["repo_owner"], repo_name=os.environ["repo_name"], mlflow=True)
 
 
