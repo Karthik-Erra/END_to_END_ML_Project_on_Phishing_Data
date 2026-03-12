@@ -1,21 +1,25 @@
-FROM python:3.10-slim-buster
-WORKDIR /app
-COPY . /app
+FROM python:3.10-slim
 
-EXPOSE 8000
+WORKDIR /app
 
 # Install system dependencies
-RUN apt-get update && \
-    apt-get install -y gcc curl && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends gcc curl \
+    && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements first (Docker caching optimization)
+# Copy requirements first for caching
 COPY requirements.txt .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Install AWS CLI (safe method)
-RUN pip install awscli
+# Install AWS CLI
+RUN pip install --no-cache-dir awscli
 
-CMD ["python3","app.py"]
+# Copy project files
+COPY . .
+
+# Expose API port
+EXPOSE 8000
+
+CMD ["python","app.py"]
